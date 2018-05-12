@@ -2,7 +2,7 @@ class TodosController < ApplicationController
   before_action :set_todo, only: %i(show edit update destroy)
 
   def index
-    @todos = Todo.all
+    @todos = Todo.order("updated_at DESC")
   end
 
   def show

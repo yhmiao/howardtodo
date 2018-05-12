@@ -2,7 +2,7 @@
 
 <h1>Todos</h1>
 
-<table>
+<table id="todo_index">
   <thead>
     <tr>
       <th>Title</th>
@@ -14,13 +14,7 @@
 
   <tbody>
     <% @todos.each do |todo| %>
-      <tr>
-        <td><%= todo.title %></td>
-        <td><%= todo.body %></td>
-        <td><%= link_to 'Show', todo %></td>
-        <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-        <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <%= render 'index_row', todo: todo %>
     <% end %>
   </tbody>
 </table>
