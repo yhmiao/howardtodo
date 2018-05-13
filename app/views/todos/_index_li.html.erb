@@ -1,0 +1,18 @@
+<li id="index_li_<%= todo.id %>" class="collection-item">
+  <%= link_to todo do %>
+    <div>
+      <h5><%= todo.title %></h5>
+    </div>
+    <div>
+      <p><%= todo.body %></p>
+    </div>
+    <div class="row">
+      <%= link_to todo, method: :delete, data: { confirm: 'Are you sure?' }, class: "right col s1" do %>
+        <i class="material-icons">delete</i>
+      <% end %>
+      <%= link_to edit_todo_path(todo), class: "right col s1" do %>
+        <i class="material-icons">edit</i>
+      <% end %>
+    </div>
+  <% end %>
+</li>

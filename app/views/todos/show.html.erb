@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @todo.title %>
-</p>
+<h5><%= @todo.title %></h5>
 
-<p>
-  <strong>Body:</strong>
-  <%= @todo.body %>
-</p>
+<div class="card">
+  <div class="card-content">
+    <p><%= @todo.body %></p>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_todo_path(@todo) %> |
 <%= link_to 'Back', todos_path %>

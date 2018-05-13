@@ -1,6 +1,6 @@
 jQuery(document).on 'turbolinks:load', ->
   
-  todo_index_body = $('#todo_index > tbody')
+  todo_index = $('#todo_index')
 
   App.global_chat = App.cable.subscriptions.create {
       channel: "TodoChannel"
@@ -14,9 +14,9 @@ jQuery(document).on 'turbolinks:load', ->
     received: (data) ->
       switch data['act']
         when 'create'
-          todo_index_body.prepend data['todo']
+          todo_index.prepend data['todo']
         when 'update'
-          todo_index_body.find('#index_row_' + data['id']).remove()
-          todo_index_body.prepend data['todo']
+          todo_index.find('#index_li_' + data['id']).remove()
+          todo_index.prepend data['todo']
         when 'delete'
-          todo_index_body.find('#index_row_' + data['id']).remove()
+          todo_index.find('#index_li_' + data['id']).remove()
