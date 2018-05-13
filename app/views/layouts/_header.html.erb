@@ -1,12 +1,22 @@
 <nav>
   <div class="container">
     <div class="nav-wrapper">
-      <a href="#" class="left brand-logo"><i class="material-icons">cloud</i>Howard's TODO</a>
+      <%= link_to todos_path, class: "left brand-logo" do %>
+        <i class="material-icons">tag_faces</i>
+        Howard's TODO
+      <% end %>
       <ul class="right">
         <% if current_user %>
           <li>
             Salutations, <%= current_user.email %>
           </li>
+          <% if current_user.is_admin? %>
+            <li>
+              <%= link_to admin_activity_logs_path do %>
+                <i class="material-icons">assignment</i>
+              <% end %>
+            </li>
+          <% end %>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
               <i class="material-icons">exit_to_app</i>

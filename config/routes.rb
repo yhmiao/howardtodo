@@ -11,5 +11,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  namespace :admin do
+    resources :activity_logs, only: %i(index show)
+  end
+
   resources :todos
 end

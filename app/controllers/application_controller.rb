@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   after_action :log_activity
 
+  def admin_required
+    unless current_user.is_admin?
+      redirect_to "/"
+    end
+  end
+
   private
 
   def log_activity

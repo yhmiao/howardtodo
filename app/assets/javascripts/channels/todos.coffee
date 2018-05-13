@@ -1,5 +1,4 @@
 jQuery(document).on 'turbolinks:load', ->
-  
   todo_index = $('#todo_index')
 
   App.global_chat = App.cable.subscriptions.create {
