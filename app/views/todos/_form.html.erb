@@ -1,7 +1,7 @@
 <%= form_with(model: todo, local: true, class: "col s12") do |form| %>
   <% if todo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
+    <div id="error_explanation" class="card-panel red lighten-3">
+      <h6><%= pluralize(todo.errors.count, "error") %> prohibited this todo from being saved:</h6>
 
       <ul>
       <% todo.errors.full_messages.each do |message| %>
@@ -15,14 +15,14 @@
 
   <div class="row">
     <div class="input-field col s12">
-      <%= form.label :title %>
+      <%= form.label :title %><br />
       <%= form.text_field :title, id: :todo_title, class: "validate" %>
     </div>
   </div>
 
   <div class="row">
     <div class="input-field col s12">
-      <%= form.label :body %>
+      <%= form.label :body %><br />
       <%= form.text_area :body, id: :todo_body, class: "materialize-textarea" %>
     </div>
   </div>

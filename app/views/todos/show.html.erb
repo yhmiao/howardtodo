@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div id="notice" class="card-panel green lighten-3"><%= notice %></div>
+<% end %>
 
 <h5><%= @todo.title %></h5>
 

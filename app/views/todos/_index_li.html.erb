@@ -1,6 +1,7 @@
 <li id="index_li_<%= todo.id %>" class="collection-item">
   <%= link_to todo do %>
     <div>
+      <%= render 'save_alert', act: act if act %>
       <h5><%= todo.title %></h5>
     </div>
     <div>
