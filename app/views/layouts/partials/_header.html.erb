@@ -1,3 +1,5 @@
+<%= render "layouts/partials/user_dropdown_menu" %>
+
 <nav>
   <div class="container">
     <div class="nav-wrapper">
@@ -5,18 +7,14 @@
         <i class="material-icons">tag_faces</i>
         Howard's TODO
       <% end %>
-      <ul class="right">
+      <ul class="right hide-on-med-and-down">
         <% if current_user %>
           <li>
-            Salutations, <%= current_user.email %>
+            <a class="dropdown-trigger" href="#!" data-target="user_dropdown">
+              Salutations, <%= current_user.email %>
+              <i class="material-icons right">arrow_drop_down</i>
+            </a>
           </li>
-          <% if current_user.is_admin? %>
-            <li>
-              <%= link_to admin_activity_logs_path do %>
-                <i class="material-icons">assignment</i>
-              <% end %>
-            </li>
-          <% end %>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
               <i class="material-icons">exit_to_app</i>

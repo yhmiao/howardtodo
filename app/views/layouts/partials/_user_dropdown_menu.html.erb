@@ -1,0 +1,11 @@
+<% if current_user %>
+  <ul id="user_dropdown" class="dropdown-content">
+    <% if current_user.is_admin? %>
+      <li>
+        <%= link_to admin_activity_logs_path do %>
+          <i class="material-icons">assignment</i>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
