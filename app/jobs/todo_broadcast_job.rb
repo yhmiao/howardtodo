@@ -13,6 +13,6 @@ class TodoBroadcastJob < ApplicationJob
 
   private
     def render_todo(todo, act)
-      TodosController.render(partial: 'todos/index_li', locals: {todo: todo, act: act})
+      TodosController.render(partial: 'todos/partials/index_li', locals: {todo: todo, act: act})
     end
 end

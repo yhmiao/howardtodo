@@ -1,5 +1,7 @@
 <h4 class="center">New Todo</h4>
 
-<%= render 'form', todo: @todo %>
+<%= render 'todos/partials/form', todo: @todo %>
 
-<%= link_to 'Back', todos_path %>
+<div class="center">
+  <%= link_to 'Back', todos_path %>
+</div>

@@ -12,8 +12,8 @@
   </div>
 </div>
 
-<ul id="todo_index" class="collection">
+<ul id="todo_index" class="collapsible">
   <% @todos.each do |todo| %>
-    <%= render 'index_li', todo: todo, act: nil %>
+    <%= render 'todos/partials/index_li', todo: todo, act: nil %>
   <% end %>
 </ul>

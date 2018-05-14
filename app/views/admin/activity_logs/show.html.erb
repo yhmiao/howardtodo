@@ -1,0 +1,27 @@
+<h5><%= @activity_log.created_at %></h5>
+
+<div class="card">
+  <div class="card-content">
+    <p>
+      <strong>Email:</strong>
+      <%= @activity_log.user_email %>
+    </p>
+
+    <p>
+      <strong>Controller:</strong>
+      <%= @activity_log.controller %>
+    </p>
+
+    <p>
+      <strong>Action:</strong>
+      <%= @activity_log.action %>
+    </p>
+
+    <p>
+      <strong>Params:</strong>
+      <%= @activity_log.params %>
+    </p>
+  </div>
+</div>
+
+<%= link_to 'Back', admin_activity_logs_path %>

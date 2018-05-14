@@ -1,12 +1,10 @@
 <li id="index_li_<%= todo.id %>" class="collection-item">
-  <%= link_to todo do %>
-    <div>
-      <%= render 'save_alert', act: act if act %>
-      <h5><%= todo.title %></h5>
-    </div>
-    <div>
-      <p><%= todo.body %></p>
-    </div>
+  <div class="collapsible-header">
+    <h5><%= todo.title %></h5>
+    <%= date_time_display(todo.updated_at, act) %>
+  </div>
+  <div class="collapsible-body">
+    <p><%= todo.body %></p>
     <div class="row">
       <%= link_to todo, method: :delete, data: { confirm: 'Are you sure?' }, class: "right col s1" do %>
         <i class="material-icons">delete</i>
@@ -14,6 +12,9 @@
       <%= link_to edit_todo_path(todo), class: "right col s1" do %>
         <i class="material-icons">edit</i>
       <% end %>
+      <%= link_to todo, class: "right col s1" do %>
+        <i class="material-icons">visibility</i>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </li>

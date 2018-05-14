@@ -2,7 +2,7 @@
   <div id="notice" class="card-panel green lighten-3"><%= notice %></div>
 <% end %>
 
-<h5><%= @todo.title %></h5>
+<h4 class="center"><%= @todo.title %></h4>
 
 <div class="card">
   <div class="card-content">
@@ -10,5 +10,6 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_todo_path(@todo) %> |
-<%= link_to 'Back', todos_path %>
+<div class="center">
+  <%= link_to 'Edit', edit_todo_path(@todo) %> | <%= link_to 'Back', todos_path %>
+</div>
