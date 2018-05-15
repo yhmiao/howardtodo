@@ -24,9 +24,13 @@ Rails 5.1.6 with Ruby 2.4.1
 
 Coffeescript and Rails default views.
 
+## Websocket
+
+Action Cable with async, Redis(production)
+
 ## Database
 
-sqlite3
+sqlite3, MySQL(production)
 
 ## Test Framework
 
@@ -60,7 +64,7 @@ Materialize 1.0.0.rc1
 
 #### 3. Setup Rails
 
-Move to project root directory:
+Move to project directory:
 
 ```
 bundle install
@@ -75,10 +79,10 @@ Go to `http://localhost:3000` and you should see no error.
 
 Run `rspec` and ensure all tests pass.
 
-## Scaling and Potential Bottenecks
+## Scaling and Potential Botteneck
 
-#### 1. Action cable might not be the best solution for scaling as it will cause more latency with more users. The alternatives would be to switch to anycable or phoenix to be used along side rails server.  
+1. Action cable might not be the best solution for scaling as it will cause more latency with more users. The alternatives would be to switch to anycable or phoenix to be used along side rails server.
 
-#### 2. Loading all todo records during index action may create a bottleneck. To resolve, use back-end pagination to return partial records instead of entire table.
+2. Loading all todo records during index action may create a bottleneck. To resolve, use back-end pagination to return partial records instead of entire table.
 
-#### 3. The usual solution to support large scale network traffic is to use a load balancer.
+3. The usual solution to support large scale network traffic is to use a load balancer.
