@@ -65,6 +65,7 @@ Move to project root directory:
 ```
 bundle install
 rake db:migrate
+rake db:seed
 rails s
 ```
 
