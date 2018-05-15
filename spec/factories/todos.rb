@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :todo do
     title "Monday"
     body "Laundry fun night."

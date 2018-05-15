@@ -4,14 +4,16 @@ RSpec.describe TodosController, type: :controller do
   login_user
 
   before do
-    @todo_1 = create(:todo, user_id: controller.current_user.id)
-    @todo_2 = create(:todo, :tuesday, user_id: controller.current_user.id,)
+    @todo_1   = create(:todo, user_id: controller.current_user.id)
+    @todo_2   = create(:todo, :tuesday, user_id: controller.current_user.id)
+    @log_size = ActivityLog.all.size
   end
 
   it "#index" do
     get :index
 
     expect(response).to have_http_status(200)
+    expect(ActivityLog.all.size).to eq(@log_size+=1)
   end
 
   it '#create' do
@@ -21,6 +23,7 @@ RSpec.describe TodosController, type: :controller do
 
     expect(response).to have_http_status(302)
     expect(Todo.count).to eq(3)
+    expect(ActivityLog.all.size).to eq(@log_size+=1)
   end
 
   it '#update' do
@@ -30,6 +33,7 @@ RSpec.describe TodosController, type: :controller do
 
     expect(response).to have_http_status(302)
     expect(Todo.last.body).to eq("Taco Tuesday is a trap!")
+    expect(ActivityLog.all.size).to eq(@log_size+=1)
   end
 
   it '#destroy' do
@@ -37,5 +41,6 @@ RSpec.describe TodosController, type: :controller do
 
     expect(response).to have_http_status(302)
     expect(Todo.count).to eq(1)
+    expect(ActivityLog.all.size).to eq(@log_size+=1)
   end
 end
