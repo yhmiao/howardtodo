@@ -51,8 +51,8 @@ Install the following
 Necessary:
 
 ```
-Ruby      2.4.1
-Rails     5.1.6
+Ruby      2.5.7
+Rails     5.2.3
 ```
 
 Necessary but versions can be different:
@@ -78,11 +78,3 @@ Go to `http://localhost:3000` and you should see no error.
 #### 4. Running tests
 
 Run `rspec` and ensure all tests pass.
-
-## Scaling and Potential Botteneck
-
-1. Action cable might not be the best solution for scaling as it will cause more latency with more users. The alternatives would be to switch to anycable or phoenix to be used along side rails server.
-
-2. Loading all todo records during index action may create a bottleneck. To resolve, use back-end pagination to return partial records instead of entire table.
-
-3. The usual solution to support large scale network traffic is to use a load balancer.
